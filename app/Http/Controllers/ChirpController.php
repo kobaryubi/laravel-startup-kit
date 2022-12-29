@@ -13,4 +13,15 @@ class ChirpController extends Controller
     {
         return view('chirps.index');
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
 }
