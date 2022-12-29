@@ -11,6 +11,6 @@ class ChirpController extends Controller
      */
     public function index()
     {
-        return 'Hello, World!';
+        return view('chirps.index');
     }
 }
