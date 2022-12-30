@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/chirps', [ChirpController::class, 'index']);
+Route::get('/chirps', [ChirpController::class, 'index'])->name('chirps.index');
 Route::post('/chirps', [ChirpController::class, 'store'])->name('chirps.store');
