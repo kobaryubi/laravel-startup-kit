@@ -15,4 +15,14 @@ class RegisterController extends Controller
     {
         return view('register.index');
     }
+
+    /**
+     * Handle an incoming registration request.
+     *
+     * @param \Illuminate\Http\Request  $request
+     */
+    public function store(Request $request)
+    {
+        //
+    }
 }
