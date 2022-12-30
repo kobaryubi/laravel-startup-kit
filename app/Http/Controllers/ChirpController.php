@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chirp;
 use Illuminate\Http\Request;
 
 class ChirpController extends Controller
@@ -27,5 +28,8 @@ class ChirpController extends Controller
         $validated = $request->validate([
             'message' => 'required|string|max:255'
         ]);
+        Chirp::create($validated);
+
+        return redirect(route('chirps.index'));
     }
 }
