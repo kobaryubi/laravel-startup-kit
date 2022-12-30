@@ -5,6 +5,7 @@
         @vite('resources/js/app/js')
     </head>
     <body>
+        @include('layouts.navigation')
         <main>
             {{ $slot }}
         </main>

@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <form method="POST" action="{{ route('chirps.store') }}">
         @csrf
         <textarea
@@ -8,4 +8,4 @@
         <x-input-error :messages="$errors->get('message')"/>
         <button type="submit">submit</button>
     </form>
-</x-layout>
+</x-app-layout>
