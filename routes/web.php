@@ -27,3 +27,8 @@ Route::post('/chirps', [ChirpController::class, 'store'])
 Route::get('/register', [RegisterController::class, 'create'])
     ->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/dashboard', function() {
+    return view('dashboard');
+})
+    ->name('dashboard');
