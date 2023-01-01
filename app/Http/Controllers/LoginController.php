@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -19,10 +20,10 @@ class LoginController extends Controller
     /**
      * Handle an incoming authentication request.
      *
-     * @param \App\Http\Request  $request
+     * @param \App\Http\Requests\LoginRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(LoginRequest $request)
     {
         //
     }

@@ -3,7 +3,7 @@
         @csrf
         <div>
             <label for="email">Email</label>
-            <input id="email" type="email" :value="old('email')" required autofocus />
+            <input id="email" type="email" name="email" :value="old('email')" required autofocus />
             <x-input-error :messages="$errors->get('email')" />
         </div>
         <div>
