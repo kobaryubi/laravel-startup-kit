@@ -1,5 +1,4 @@
 <x-app-layout>
-    <p>{{ session('status') }}</p>
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div>
