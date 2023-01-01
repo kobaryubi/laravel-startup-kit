@@ -22,8 +22,10 @@ Route::get('/', function () {
 });
 
 Route::get('/chirps', [ChirpController::class, 'index'])
+    ->middleware('auth')
     ->name('chirps.index');
 Route::post('/chirps', [ChirpController::class, 'store'])
+    ->middleware('auth')
     ->name('chirps.store');
 
 Route::get('/register', [RegisterController::class, 'create'])
