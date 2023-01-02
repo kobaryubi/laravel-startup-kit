@@ -12,6 +12,8 @@
         @foreach ($chirps as $chirp)
             <li>
                 <p>{{ $chirp->message }}</p>
+                <p>{{ $chirp->user->name }}</p>
+                <p>{{ $chirp->created_at->format('j M Y, g:i a')}}</p>
             </li>
         @endforeach
     </ul>
