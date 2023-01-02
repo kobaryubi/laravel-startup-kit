@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Chirp;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -17,4 +18,12 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+    /**
+     * Get the chirps for the user.
+     */
+    public function chirps()
+    {
+        return $this->hasMany(Chirp::class);
+    }
 }
