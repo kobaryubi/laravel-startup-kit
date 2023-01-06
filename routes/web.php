@@ -21,12 +21,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/chirps', [ChirpController::class, 'index'])
-    ->middleware('auth')
-    ->name('chirps.index');
-Route::post('/chirps', [ChirpController::class, 'store'])
-    ->middleware('auth')
-    ->name('chirps.store');
+Route::middleware('auth')->group(function () {
+    Route::get('chirps', [ChirpController::class, 'index'])
+        ->name('chirps.index');
+    Route::post('chirps', [ChirpController::class, 'store'])
+        ->name('chirps.store');
+    Route::get('chirps/{chirp}/edit', [ChirpController::class, 'edit'])
+        ->name('chirps.edit');
+    Route::patch('chirps/{chirp}', [ChirpController::class, 'update'])
+        ->name('chirps.update');
+});
 
 Route::get('/register', [RegisterController::class, 'create'])
     ->name('register');
