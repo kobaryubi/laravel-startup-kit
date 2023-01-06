@@ -34,4 +34,17 @@ class ChirpController extends Controller
 
         return redirect(route('chirps.index'));
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param \App\Models\Chirp  $chirp
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Chirp $chirp)
+    {
+        return view('chirps.edit', [
+            'chirp' => $chirp
+        ]);
+    }
 }

@@ -14,6 +14,12 @@
                 <p>{{ $chirp->message }}</p>
                 <p>{{ $chirp->user->name }}</p>
                 <p>{{ $chirp->created_at->format('j M Y, g:i a')}}</p>
+                @unless ($chirp->created_at->eq($chirp->updated_at))
+                    <small> &middot; edited</small>
+                @endunless
+                @if ($chirp->user->is(auth()->user()))
+                    <a href="{{ route('chirps.edit', $chirp) }}">Edit</a>
+                @endif
             </li>
         @endforeach
     </ul>
