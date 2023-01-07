@@ -19,6 +19,11 @@
                 @endunless
                 @if ($chirp->user->is(auth()->user()))
                     <a href="{{ route('chirps.edit', $chirp) }}">Edit</a>
+                    <form method="POST" action="{{ route('chirps.destroy', $chirp) }}">
+                        @csrf
+                        @method('delete')
+                        <button type="submit">Delete</button>
+                    </form>
                 @endif
             </li>
         @endforeach

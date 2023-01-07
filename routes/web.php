@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
         ->name('chirps.edit');
     Route::patch('chirps/{chirp}', [ChirpController::class, 'update'])
         ->name('chirps.update');
+    Route::delete('chirps/{chirp}', [ChirpController::class, 'destroy'])
+        ->name('chirps.destroy');
 });
 
 Route::get('/register', [RegisterController::class, 'create'])
