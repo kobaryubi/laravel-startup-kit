@@ -62,4 +62,17 @@ class ChirpController extends Controller
         $chirp->update($validated);
         return redirect(route('chirps.index'));
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param \App\Models\Chirp  $chirp
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Chirp $chirp)
+    {
+        $this->authorize('delete', $chirp);
+        $chirp->delete();
+        return redirect(route('chirps.index'));
+    }
 }

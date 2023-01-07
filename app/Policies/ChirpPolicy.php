@@ -12,10 +12,22 @@ class ChirpPolicy
      *
      * @param \App\Models\User  $user
      * @param \App\Models\Chirp  $chirp
-     * @return \Illuminate\Auth\Access\bool
+     * @return bool
      */
     public function update(User $user, Chirp $chirp)
     {
         return $chirp->user()->is($user);
+    }
+
+    /**
+     * Determine whether the user can delete the model.
+     *
+     * @param \App\Models\User  $user
+     * @param \App\Models\Chirp  $chirp
+     * @return bool
+     */
+    public function delete(User $user, Chirp $chirp)
+    {
+        return $this->update($user, $chirp);
     }
 }
